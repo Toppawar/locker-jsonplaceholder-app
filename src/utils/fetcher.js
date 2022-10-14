@@ -9,7 +9,7 @@
  */
 
 const fetcher = ({ url, method = "GET", body = null, headers }) => {
-  return fetch(`${process.env.REACT_APP_URL_ENDPOINT}${url}`, {
+  return fetch(`${BACKEND_URL}${url}`, {
     method,
     body,
     headers: {

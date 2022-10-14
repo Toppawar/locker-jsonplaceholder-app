@@ -43,7 +43,7 @@ const Posts = () => {
       return tableData;
     }
     return [];
-  }, [posts, orderBy.header, orderBy.order]);
+  }, [posts, orderBy.header, orderBy.order, users]);
 
   const handleLoadPost = (row) => {
     const { id } = row;
