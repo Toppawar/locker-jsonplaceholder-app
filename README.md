@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+[![Pipeline](https://github.com/Toppawar/locker-jsonplaceholder-app/actions/workflows/pipeline.yml/badge.svg)](https://github.com/Toppawar/locker-jsonplaceholder-app/actions/workflows/pipeline.yml)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Demo
 
-## Available Scripts
+Demo desplegada con Vercel
 
-In the project directory, you can run:
+[https://locker-jsonplaceholder-app.vercel.app/](https://locker-jsonplaceholder-app.vercel.app/)
 
-### `npm start`
+# Resumen
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Se ha realizado la creación de una SPA siguiendo el siguiente modelo.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Una plataforma donde poder visualizar uuna tabla de POSTS que incluye un buscador.
+La tabla tiene la funcionalidad de filtrado por cabeceras excepto la opción de `Body`
+Además, funciona con un página en cliente sin tener que cargar la lista completa.
 
-### `npm test`
+Como extra en la tlaba se ha incluido el fetching de datos como estático el listado de usuarios por lo que la traba carga los POSTS y el nombre de los autores.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Al hacer click en una de las filas se realiza la redirección a una página detallada con:
+
+- Título del post.
+- El nombre del autor.
+- El body del post
+
+Cuando se pulse en el botón de `Editar` en la parte superior derecha, cargará un formulario que permitirá editar tanto el título como el body del post.
+
+Si todo funciona bien, volvera al modo lectura y saldrá una notificación en verde que la actualización ha sido correcta.
+En caso de fallo también se mostrará una notificación en rojo.
+
+La página incluye el cambiar a modo noche si se desea.
+
+## Tecnologías utilizadas
+
+### Persistencia de datos
+
+Para darle un poco más de esencia a la prueba, se ha implementado una tecnología de persistencia de datos. Solo se carga una vez por pantalla.
+
+La persistencia de datos dura el tiempo que el cliente esté en la app mediante o a la hora. Dicha tecnología es  `SWR (1)`.
+
+
+### Diseño
+
+El diseño ha sido un poco imaginativo por mi parte. En cuanto a los componentes se han utilizado como base la libreria de `Chakra UI (2)`.
+
+Además, se ha implementado la libreria de `react-icons (3)` para la iconografia (que además es compatible con la libreria de componentes).
+
+Estas son las dependencias de mayor calibre en cuanto al proyecto. El resto son para la realización de Tests, animaciones/transiciones, la configuración de `eslint` y `webpack`.
+
+## Scripts
+
+En el proyecto se pueden ejecutar los siguientes scripts
+
+### `npm run dev`
+
+Ejecuta la app en modo desarrollo.<br />
+Por defecto se abrirá automáticamente. El entorno se abre en [http://localhost:3000](http://localhost:3000) para verla en el navegador.
+
+La página se actualiza cuando se realizan cambios en el entorno.<br />
+También veras todos los errores que proporciona lint en la consola.
+
+### `npm run test`
+
+Ejecuta todos los test de forma interactiva en la consola.<br />
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Construye la app para el entorno de producción generando una carpeta `build`.<br />
+Empaqueta correctamente React en modo de producción y optimiza la compilación para obtener el mejor rendimiento.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ejectuta el proyecto generado por el build en un entorno de producción.
 
-### `npm run eject`
+### `npm run lint`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Ejecuta el linter en la aplicación y en caso de encontrar errores puede:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Arreglarlos automaticamente.
+2. En caso de requerir intervención, se mostrara un error en el log despues de ejecutar el linter.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Github Actions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+He creado un Action simple que instala las dependencias y ejecuta el linter antes de poder realizar un Merge tanto a `develop` como `master`.
 
-## Learn More
+### Referencias
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. [SWR - Stale While Revalidate](https://swr.vercel.app/es-ES)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. [Chakra UI](https://chakra-ui.com/)
 
-### Code Splitting
+3. [React Icons](https://react-icons.github.io/react-icons/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
