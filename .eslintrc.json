@@ -19,6 +19,7 @@
       "quotes": "off",
       "linebreak-style": ["error", "windows"],
       "prefer-rest-params": "off",
+      "default-param-last": "off",
       "react/function-component-definition": [
         2,
         {
