@@ -12,6 +12,9 @@
       "ecmaVersion": "latest",
       "sourceType": "module"
     },
+    "globals": {
+      "BACKEND_URL": true
+    },
     "plugins": ["react", "jest"],
     "rules": {
       "react/jsx-filename-extension": "off",
